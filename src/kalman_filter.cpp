@@ -1,7 +1,6 @@
 #include "kalman_filter.h"
 #include "tools.h"
 #include <iostream>
-#define PI 3.14159265
 
 using namespace std;
 
@@ -53,10 +52,11 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
   VectorXd h = VectorXd(3);
   h << rho, theta, rho_dot;
   VectorXd y = z - h;
-  if( y[1] > PI )
-    y[1] -= 2.f*PI;
-  if( y[1] < -PI )
-    y[1] += 2.f*PI;
+  if( y[1] > M_PI )
+    y[1] -= 2.f*M_PI;
+  if( y[1] < -M_PI )
+    y[1] += 2.f*M_PI;
+
   MatrixXd Ht = Hj_.transpose();
   MatrixXd S = Hj_ * P_ * Ht + R_ekf_;
   MatrixXd Si = S.inverse();
