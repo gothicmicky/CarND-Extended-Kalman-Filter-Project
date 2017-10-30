@@ -45,9 +45,11 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
   //Avoid dividing by zero:
   if( x_[0] == 0. | x_[1] == 0. )
     return;
+
   double rho = sqrt( x_(0) * x_(0) + x_(1) * x_(1) );
   double theta = atan2( x_(1), x_(0) );
   double rho_dot = ( x_(0) * x_(2) + x_(1) * x_(3) ) / rho;
+
   VectorXd h = VectorXd(3);
   h << rho, theta, rho_dot;
   VectorXd y = z - h;
