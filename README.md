@@ -9,6 +9,10 @@
 
 [ekf_flow_chart]: ./media/EKF_flow_chart.png 
 
+## References
+- http://home.wlu.edu/~levys/kalman_tutorial/
+- http://biorobotics.ri.cmu.edu/papers/sbp_papers/integrated3/kleeman_kalman_basics.pdf
+
 ## Dependencies
 
 * cmake >= 3.5

@@ -8,6 +8,8 @@ using Eigen::VectorXd;
 using namespace std;
 
 class Tools {
+
+
 public:
   /**
   * Constructor.
